@@ -62,11 +62,14 @@ public class Menu
             else if(operation == 2)
             {
                 // Call Method 2
+            
             }
             
             else if(operation == 3)
             {
+                System.out.println("\n" + Arrays.toString(randomArray));
                 //Call Method 3
+                Menu.calcAverDifference(randomArray);
             }
 
             else if(operation == 4)
@@ -89,12 +92,26 @@ public class Menu
             
 
                 
-        }
-
-        
-       
-       
-       
+        }     
        
     }
+
+    public static void calcAverDifference(int [] arr){
+        int sum = 0;
+        int[] averDifference = new int[arr.length];
+
+        for (int i = 0; i < arr.length; i++) {
+            sum+=arr[i];    
+        }
+        int average = (sum/arr.length);
+
+        for (int i = 0; i < arr.length ; i++) {
+            averDifference[i]=(average-arr[i]);
+        }
+        
+        System.out.println("\n" + "The average of the array is "+average + "\n");
+        
+        System.out.println(Arrays.toString(averDifference));
+    }
+
 }
