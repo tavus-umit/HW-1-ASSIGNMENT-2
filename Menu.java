@@ -4,59 +4,36 @@ import java.util.Scanner;
 
 public class Menu {
 
-        for (int i = 0; i < arr.length; i++) {
-            sum+=arr[i];    
-        }
-        int average = (sum/arr.length);
-
-        for (int i = 0; i < arr.length ; i++) {
-            averDifference[i]=(average-arr[i]);
-        }
-        
-        System.out.println("\n" + "The average of the array is "+average + "\n");
-        
-        System.out.println(Arrays.toString(averDifference));
-    }
-
-    public static int sumOddIndex(int [] array)
-    {
-        int sumOdd = 0;
-        for(int i = 0; i<array.length;i++)
-        {
-            if(i%2==1)
-            {
-                sumOdd = sumOdd + array[i];
-            }
-        }
-        
-        return sumOdd;
-    }
     public static void main(String[] args) {
 
         String menu = "-------------------------MAIN MENU-------------------------" + '\n'
                 + "-----------------------------------------------------------"
                 + '\n'
-                + "1-Display Maximum Value"
+                + "1-Display the Array"
                 + '\n'
                 + "-----------------------------------------------------------"
                 + '\n'
-                + "2-Display Minimum Value"
+                + "2-Display Maximum Value"
                 + '\n'
                 + "-----------------------------------------------------------"
                 + '\n'
-                + "3-Display Difference Between Each Element and Average"
+                + "3-Display Minimum Value"
                 + '\n'
                 + "-----------------------------------------------------------"
                 + '\n'
-                + "4-Display Sum of Elements with Odd-Numbered Indexes"
+                + "4-Display Difference Between Each Element and Average"
                 + '\n'
                 + "-----------------------------------------------------------"
                 + '\n'
-                + "5-Display Sum of Elements with Even-Numbered Indexes"
+                + "5-Display Sum of Elements with Odd-Numbered Indexes"
                 + '\n'
                 + "-----------------------------------------------------------"
                 + '\n'
-                + "6-Exit"
+                + "6-Display Sum of Elements with Even-Numbered Indexes"
+                + '\n'
+                + "-----------------------------------------------------------"
+                + '\n'
+                + "7-Exit"
                 + '\n'
                 + "-----------------------------------------------------------";
 
@@ -80,32 +57,36 @@ public class Menu {
             System.out.print("Please Choose Your Operation: ");
             int operation = in.nextInt();
 
-            if (operation == 1) {
-                System.out.println("\n" + "The maximum value of the array is "+ Menu.findMaxValueOfTheArray(randomArray) + "\n"); 
+            if(operation == 1)
+            {
+                System.out.println(Arrays.toString(randomArray));
             }
 
             else if (operation == 2) {
+                System.out.println("\n" + "The maximum value of the array is "+ Menu.findMaxValueOfTheArray(randomArray) + "\n"); 
+            }
+
+            else if (operation == 3) {
                 System.out.println("\n" + "The minimum value of the array is "+ Menu.findMinValueOfTheArray(randomArray) + "\n");
 
             }
             
-            else if(operation == 3)
-            {
-                System.out.println("\n" + Arrays.toString(randomArray));
-                Menu.calcAverDifference(randomArray);
-            }
-
             else if(operation == 4)
             {
-                System.out.println('\n' + "Sum of Elements with Odd-Numbered Indexes: " + sumOddIndex(randomArray) + '\n' );
+                Menu.calcAverDifference(randomArray);
             }
 
             else if(operation == 5)
             {
-                //Call Method 5
+                System.out.println('\n' + "Sum of Elements with Odd-Numbered Indexes: " + sumOddIndex(randomArray) + '\n' );
             }
 
             else if(operation == 6)
+            {
+                //Call Method 6
+            }
+
+            else if(operation == 7)
             {
                 loop = false;
             }
