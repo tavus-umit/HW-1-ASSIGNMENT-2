@@ -80,15 +80,13 @@ public class Menu {
             System.out.print("Please Choose Your Operation: ");
             int operation = in.nextInt();
 
-            if(operation == 1)
-            {
-                //Call Method 1
+            if (operation == 1) {
+                System.out.println("\n" + "The maximum value of the array is "+ Menu.findMaxValueOfTheArray(randomArray) + "\n"); 
             }
 
-            else if(operation == 2)
-            {
-                // Call Method 2
-            
+            else if (operation == 2) {
+                System.out.println("\n" + "The minimum value of the array is "+ Menu.findMinValueOfTheArray(randomArray) + "\n");
+
             }
             
             else if(operation == 3)
@@ -132,6 +130,28 @@ public class Menu {
         System.out.println("\n" + "The average of the array is " + average + "\n");
 
         System.out.println(Arrays.toString(averDifference));
+    }
+
+    public static int findMaxValueOfTheArray(int [] arr){ 
+        int maxValue = arr[0]; 
+ 
+        for (int i = 1; i<arr.length; i++) { 
+            if (maxValue < arr[i]) { 
+                maxValue = arr[i]; 
+            } 
+        } 
+        return maxValue; 
+    } 
+ 
+    public static int findMinValueOfTheArray(int [] arr){ 
+        int minValue = arr[0]; 
+ 
+        for (int i = 1; i<arr.length; i++) { 
+            if (minValue > arr[i]) { 
+                minValue = arr[i]; 
+            } 
+        } 
+        return minValue; 
     }
 
     public static int sumOddIndex(int[] array) {
