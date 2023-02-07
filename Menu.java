@@ -4,6 +4,33 @@ import java.util.Scanner;
 
 public class Menu {
 
+        for (int i = 0; i < arr.length; i++) {
+            sum+=arr[i];    
+        }
+        int average = (sum/arr.length);
+
+        for (int i = 0; i < arr.length ; i++) {
+            averDifference[i]=(average-arr[i]);
+        }
+        
+        System.out.println("\n" + "The average of the array is "+average + "\n");
+        
+        System.out.println(Arrays.toString(averDifference));
+    }
+
+    public static int sumOddIndex(int [] array)
+    {
+        int sumOdd = 0;
+        for(int i = 0; i<array.length;i++)
+        {
+            if(i%2==1)
+            {
+                sumOdd = sumOdd + array[i];
+            }
+        }
+        
+        return sumOdd;
+    }
     public static void main(String[] args) {
 
         String menu = "-------------------------MAIN MENU-------------------------" + '\n'
@@ -53,30 +80,35 @@ public class Menu {
             System.out.print("Please Choose Your Operation: ");
             int operation = in.nextInt();
 
-            if (operation == 1) {
-                // Call Method 1
+            if(operation == 1)
+            {
+                //Call Method 1
             }
 
-            else if (operation == 2) {
+            else if(operation == 2)
+            {
                 // Call Method 2
-
+            
             }
-
-            else if (operation == 3) {
+            
+            else if(operation == 3)
+            {
                 System.out.println("\n" + Arrays.toString(randomArray));
                 Menu.calcAverDifference(randomArray);
             }
 
-            else if (operation == 4) {
-                System.out.println(
-                        '\n' + "Sum of Elements with Odd-Numbered Indexes: " + sumOddIndex(randomArray) + '\n');
+            else if(operation == 4)
+            {
+                System.out.println('\n' + "Sum of Elements with Odd-Numbered Indexes: " + sumOddIndex(randomArray) + '\n' );
             }
 
-            else if (operation == 5) {
-                // Call Method 5
+            else if(operation == 5)
+            {
+                //Call Method 5
             }
 
-            else if (operation == 6) {
+            else if(operation == 6)
+            {
                 loop = false;
             }
 
