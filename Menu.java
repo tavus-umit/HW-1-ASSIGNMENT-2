@@ -6,8 +6,7 @@ public class Menu {
 
     public static void main(String[] args) {
 
-        String menu = 
-                  "-------------------------MAIN MENU-------------------------" 
+        String menu = "-------------------------MAIN MENU-------------------------"
                 + '\n'
                 + "-----------------------------------------------------------"
                 + '\n'
@@ -42,24 +41,24 @@ public class Menu {
         Random rand = new Random();
         Scanner in = new Scanner(System.in);
 
-        //Inputing the size of the array
+        // Inputing the size of the array
         System.out.println("Please Enter Size Of The Array: ");
         int sizeOfTheArray = in.nextInt();
-        
-        // Consuming the space to perevent further input error 
+
+        // Consuming the space to perevent further input error
         in.nextLine();
 
         // Creating array of random integers between [0,100]
         int randomArray[] = new int[sizeOfTheArray];
+
         for (int i = 0; i < randomArray.length; i++) {
+            
             randomArray[i] = rand.nextInt(101);
         }
 
         // Creating a boolean variable to use in while loop for displaying the menu
         // again after an operation ends.
         boolean loop = true;
-
-
 
         do {
             System.out.println(menu);
@@ -68,9 +67,8 @@ public class Menu {
             System.out.print("Please Choose Your Operation: ");
             int operation = in.nextInt();
 
-            // Consuming the space to perevent further input error 
+            // Consuming the space to perevent further input error
             in.nextLine();
-
 
             if (operation == 1) {
                 System.out.println(Arrays.toString(randomArray));
@@ -103,47 +101,45 @@ public class Menu {
 
             else if (operation == 7) {
                 loop = false;
+                in.close();
             }
 
         } while (loop);
 
     }
 
-    public static int sumOfEvenIndexes(int[] inputArray){
+    public static int sumOfEvenIndexes(int[] inputArray) {
         int sum = inputArray[0];
 
-        for (int i = 2; i < inputArray.length; i+= 2) {
+        for (int i = 2; i < inputArray.length; i += 2) {
             sum += inputArray[i];
         }
+
         return sum;
     }
 
-    public static void calcAverDifference(int[] arr) {
-        int sum = 0;
-        int[] averDifference = new int[arr.length];
+    public static int sumOddIndex(int[] array) {
+        int sumOdd = 0;
 
-        for (int i = 0; i < arr.length; i++) {
-            sum += arr[i];
-        }
-        int average = (sum / arr.length);
-
-        for (int i = 0; i < arr.length; i++) {
-            averDifference[i] = (average - arr[i]);
+        for (int i = 0; i < array.length; i++) {
+            if (i % 2 == 1) {
+                sumOdd = sumOdd + array[i];
+            }
         }
 
-        System.out.println("\n" + "The average of the array is " + average + "\n");
-
-        System.out.println(Arrays.toString(averDifference));
+        return sumOdd;
     }
 
     public static int findMaxValueOfTheArray(int[] arr) {
         int maxValue = arr[0];
 
         for (int i = 1; i < arr.length; i++) {
+
             if (maxValue < arr[i]) {
                 maxValue = arr[i];
             }
         }
+
         return maxValue;
     }
 
@@ -158,15 +154,23 @@ public class Menu {
         return minValue;
     }
 
-    public static int sumOddIndex(int[] array) {
-        int sumOdd = 0;
-        for (int i = 0; i < array.length; i++) {
-            if (i % 2 == 1) {
-                sumOdd = sumOdd + array[i];
-            }
+    public static void calcAverDifference(int[] arr) {
+        int sum = 0;
+        int[] averDifference = new int[arr.length];
+
+        for (int i = 0; i < arr.length; i++) {
+            sum += arr[i];
         }
 
-        return sumOdd;
+        int average = (sum / arr.length);
+
+        for (int i = 0; i < arr.length; i++) {
+            averDifference[i] = (average - arr[i]);
+        }
+
+        System.out.println("\n" + "The average of the array is " + average + "\n");
+
+        System.out.println(Arrays.toString(averDifference));
     }
 
 }
