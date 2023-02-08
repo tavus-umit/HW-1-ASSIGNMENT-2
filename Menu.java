@@ -47,7 +47,7 @@ public class Menu {
         int sizeOfTheArray = in.nextInt();
         
         // Consuming the space to perevent further input error 
-        in.next();
+        in.nextLine();
 
         // Creating array of random integers between [0,100]
         int randomArray[] = new int[sizeOfTheArray];
@@ -67,7 +67,8 @@ public class Menu {
             int operation = in.nextInt();
 
             // Consuming the space to perevent further input error 
-            in.next();
+            in.nextLine();
+
 
             if (operation == 1) {
                 System.out.println(Arrays.toString(randomArray));
