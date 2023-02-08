@@ -97,7 +97,8 @@ public class Menu {
             }
 
             else if (operation == 6) {
-                // Call Method 6
+                System.out.println(
+                        '\n' + "Sum of Elements with Even-Numbered Indexes: " + sumOfEvenIndexes(randomArray) + '\n');
             }
 
             else if (operation == 7) {
@@ -106,6 +107,15 @@ public class Menu {
 
         } while (loop);
 
+    }
+
+    public static int sumOfEvenIndexes(int[] inputArray){
+        int sum = inputArray[0];
+
+        for (int i = 2; i < inputArray.length; i+= 2) {
+            sum += inputArray[i];
+        }
+        return sum;
     }
 
     public static void calcAverDifference(int[] arr) {
