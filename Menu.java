@@ -59,7 +59,9 @@ public class Menu {
         // again after an operation ends.
         boolean loop = true;
 
-        while (loop) {
+
+
+        do {
             System.out.println(menu);
 
             // Taking input from user to choose operation
@@ -102,7 +104,7 @@ public class Menu {
                 loop = false;
             }
 
-        }
+        } while (loop);
 
     }
 
